@@ -678,6 +678,101 @@
       transform: translateY(0);
     }
 
+    /* ── FLOW ── */
+    #flow {
+      background: var(--warm-white);
+    }
+    .flow-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .flow-header .divider {
+      margin: 1.5rem auto;
+    }
+    .flow-steps {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+    .flow-step {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      position: relative;
+    }
+    .flow-step:not(:last-child) .flow-step-line {
+      position: absolute;
+      left: 35px;
+      top: 72px;
+      width: 1px;
+      bottom: 0;
+      background: linear-gradient(to bottom, var(--sage-light), transparent);
+    }
+    .flow-step-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 0;
+    }
+    .flow-step-circle {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--cream);
+      border: 1.5px solid var(--sage-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .flow-step:hover .flow-step-circle {
+      background: var(--sage-light);
+      border-color: var(--sage);
+    }
+    .flow-step-icon {
+      font-size: 1.3rem;
+      line-height: 1;
+    }
+    .flow-step-content {
+      padding: 0.5rem 0 3rem 1.8rem;
+    }
+    .flow-step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.65rem;
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      color: var(--sage-dark);
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+    .flow-step-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--brown);
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.05em;
+    }
+    .flow-step-text {
+      font-size: 0.82rem;
+      line-height: 2.1;
+      color: var(--text-light);
+    }
+    .flow-note {
+      max-width: 680px;
+      margin: 1rem auto 0;
+      padding: 1.2rem 1.6rem;
+      background: var(--cream);
+      border-left: 2px solid var(--sage-light);
+      font-size: 0.75rem;
+      color: var(--text-light);
+      line-height: 1.9;
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       nav { padding: 1rem 1.5rem; }
@@ -696,6 +791,14 @@
       .gallery-item:first-child { grid-row: auto; }
       #gallery .gallery-inner { padding: 0 2rem; }
       .links-grid { grid-template-columns: repeat(2, 1fr); }
+      .flow-steps { padding: 0; }
+      .flow-step { grid-template-columns: 60px 1fr; }
+      .flow-step-circle { width: 46px; height: 46px; }
+      .flow-step-icon { font-size: 1.1rem; }
+      .flow-step:not(:last-child) .flow-step-line { left: 29px; top: 58px; }
+      .flow-step-content { padding: 0.3rem 0 2.2rem 1.2rem; }
+      .flow-step-title { font-size: 0.95rem; }
+      .flow-note { margin: 0.5rem 0 0; }
       #reserve { padding: 4rem 2rem; }
       footer {
         flex-direction: column;
@@ -923,6 +1026,7 @@
   <ul class="nav-links">
     <li><a href="#about">サロンについて</a></li>
     <li><a href="#menu">メニュー</a></li>
+    <li><a href="#flow">施術の流れ</a></li>
     <li><a href="#gallery">ギャラリー</a></li>
     <li><a href="#access">アクセス</a></li>
   </ul>
@@ -1097,6 +1201,98 @@
       <p style="font-size:0.68rem;color:var(--sage-dark);margin-top:1rem;">✦ お得な回数券もございます</p>
     </div>
 
+  </div>
+</section>
+
+<!-- FLOW -->
+<section id="flow">
+  <div class="flow-header reveal">
+    <p class="section-label">First Visit</p>
+    <h2 class="section-title">はじめての方へ｜施術の流れ</h2>
+    <p class="section-title-jp">ご来店からアフターケアまで、安心してお任せください</p>
+    <div class="divider"></div>
+  </div>
+
+  <div class="flow-steps">
+
+    <!-- STEP 1 -->
+    <div class="flow-step reveal">
+      <div class="flow-step-left">
+        <div class="flow-step-circle">
+          <span class="flow-step-icon">📋</span>
+        </div>
+        <div class="flow-step-line"></div>
+      </div>
+      <div class="flow-step-content">
+        <p class="flow-step-num">Step 01</p>
+        <h3 class="flow-step-title">問診票の記入</h3>
+        <p class="flow-step-text">初めて施術を受けていただくお客様に、お身体や、普段の生活習慣などのお悩みについて記入していただきます。</p>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="flow-step reveal">
+      <div class="flow-step-left">
+        <div class="flow-step-circle">
+          <span class="flow-step-icon">💬</span>
+        </div>
+        <div class="flow-step-line"></div>
+      </div>
+      <div class="flow-step-content">
+        <p class="flow-step-num">Step 02</p>
+        <h3 class="flow-step-title">カウンセリング</h3>
+        <p class="flow-step-text">記入いただいた問診票をもとに、詳しくお話しを伺います。</p>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="flow-step reveal">
+      <div class="flow-step-left">
+        <div class="flow-step-circle">
+          <span class="flow-step-icon">🔍</span>
+        </div>
+        <div class="flow-step-line"></div>
+      </div>
+      <div class="flow-step-content">
+        <p class="flow-step-num">Step 03</p>
+        <h3 class="flow-step-title">お身体の状態チェック</h3>
+        <p class="flow-step-text">現状どのような状態か、前後左右にひねり、動かしにくいところがどこなのかを一緒に確認します。</p>
+      </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="flow-step reveal">
+      <div class="flow-step-left">
+        <div class="flow-step-circle">
+          <span class="flow-step-icon">✨</span>
+        </div>
+        <div class="flow-step-line"></div>
+      </div>
+      <div class="flow-step-content">
+        <p class="flow-step-num">Step 04</p>
+        <h3 class="flow-step-title">施術</h3>
+        <p class="flow-step-text">カウンセリングの内容をもとに、より良いコースの提案をさせていただきます。強張の心配がある方も、お声がけしながら施術させていただくので安心です。整骨院併設の完全個室の空間でゆっくりとお過ごしください。</p>
+      </div>
+    </div>
+
+    <!-- STEP 5 -->
+    <div class="flow-step reveal">
+      <div class="flow-step-left">
+        <div class="flow-step-circle">
+          <span class="flow-step-icon">🌿</span>
+        </div>
+      </div>
+      <div class="flow-step-content">
+        <p class="flow-step-num">Step 05</p>
+        <h3 class="flow-step-title">アフターケア</h3>
+        <p class="flow-step-text">日々の生活習慣でゆがみが生じます。これからのお身体のケアについてもアドバイスをさせていただきます。</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="flow-note reveal">
+    ✦ &nbsp;はじめての方も安心してご来店ください。施術中はいつでもお声がけいただけます。完全個室・完全予約制でご対応いたします。
   </div>
 </section>
 
