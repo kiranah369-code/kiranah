@@ -1083,8 +1083,7 @@
     <li><a href="#menu">メニュー</a></li>
     <li><a href="#flow">施術の流れ</a></li>
     <li><a href="#gallery">ギャラリー</a></li>
-    <li><a href="#calendar">店休日</a></li>
-    <li><a href="#access">アクセス</a></li>
+    <li><a href="#access">店休日・アクセス</a></li>
   </ul>
   <a href="#reserve" class="nav-reserve">ご予約</a>
 </nav>
@@ -1521,199 +1520,7 @@
   </div>
 </section>
 
-<!-- CALENDAR -->
-<section id="calendar" style="padding: 5rem 2rem; background: linear-gradient(160deg, #f5f0e8 0%, #eae6dc 100%); text-align: center;">
-  <p class="section-label reveal" style="text-align:center;">Schedule</p>
-  <h2 class="section-title reveal" style="text-align:center;">5月の店休日</h2>
-  <p class="section-title-jp reveal" style="text-align:center; margin-bottom: 2.5rem;">May 2026</p>
 
-  <style>
-    .cal-wrap {
-      max-width: 420px;
-      margin: 0 auto;
-      background: rgba(255,255,255,0.75);
-      backdrop-filter: blur(6px);
-      border: 1px solid #ddd8cc;
-      border-radius: 2px;
-      overflow: hidden;
-      box-shadow: 0 4px 24px rgba(107,83,68,0.07);
-    }
-    .cal-header {
-      background: linear-gradient(135deg, #8a9e85 0%, #637860 100%);
-      color: white;
-      padding: 1.4rem 1.5rem 1rem;
-      display: flex;
-      align-items: baseline;
-      gap: 0.8rem;
-    }
-    .cal-header .cal-en {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem;
-      font-weight: 300;
-      letter-spacing: 0.3em;
-      opacity: 0.85;
-    }
-    .cal-header .cal-year {
-      font-family: 'Noto Sans JP', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 300;
-      opacity: 0.7;
-    }
-    .cal-header .cal-month {
-      font-family: 'Noto Serif JP', serif;
-      font-size: 2.4rem;
-      font-weight: 300;
-      letter-spacing: 0.05em;
-      margin-left: auto;
-    }
-    .cal-header .cal-month-unit {
-      font-family: 'Noto Serif JP', serif;
-      font-size: 1rem;
-      font-weight: 300;
-      margin-left: 0.2rem;
-    }
-    .cal-body { padding: 0.6rem 1rem 1.2rem; }
-    .cal-dow {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      margin-bottom: 0.3rem;
-    }
-    .cal-dow span {
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-      color: #7a6e65;
-      text-align: center;
-      padding: 0.4rem 0;
-      font-family: 'Noto Sans JP', sans-serif;
-    }
-    .cal-dow .dow-sun { color: #c0756a; }
-    .cal-dow .dow-sat { color: #6a8fc0; }
-    .cal-grid {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 2px;
-    }
-    .cal-cell {
-      aspect-ratio: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.82rem;
-      font-family: 'Noto Sans JP', sans-serif;
-      font-weight: 300;
-      color: #3a3028;
-      position: relative;
-      border-radius: 50%;
-      transition: background 0.2s;
-    }
-    .cal-cell.sun { color: #c0756a; }
-    .cal-cell.sat { color: #6a8fc0; }
-    .cal-cell.empty { background: transparent; }
-    .cal-cell.closed {
-      background: rgba(138,158,133,0.12);
-      border-radius: 50%;
-    }
-    .cal-cell.closed::after {
-      content: '休';
-      display: block;
-      font-size: 0.52rem;
-      color: #c0756a;
-      letter-spacing: 0.05em;
-      font-weight: 400;
-      line-height: 1;
-      margin-top: 1px;
-    }
-    .cal-note {
-      margin-top: 1rem;
-      font-size: 0.68rem;
-      color: #7a6e65;
-      letter-spacing: 0.08em;
-      font-family: 'Noto Sans JP', sans-serif;
-      line-height: 1.9;
-    }
-    .cal-logo {
-      margin-top: 0.8rem;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.75rem;
-      letter-spacing: 0.35em;
-      color: #8a9e85;
-      font-style: italic;
-    }
-  </style>
-
-  <div class="cal-wrap reveal">
-    <div class="cal-header">
-      <div>
-        <div class="cal-en">MAY</div>
-        <div class="cal-year">2026</div>
-      </div>
-      <div style="margin-left:auto; display:flex; align-items:baseline; gap:0.2rem;">
-        <span class="cal-month">5</span>
-        <span class="cal-month-unit">月</span>
-      </div>
-    </div>
-    <div class="cal-body">
-      <div class="cal-dow">
-        <span class="dow-sun">日</span>
-        <span>月</span><span>火</span><span>水</span><span>木</span><span>金</span>
-        <span class="dow-sat">土</span>
-      </div>
-      <div class="cal-grid">
-        <!-- 空白 -->
-        <div class="cal-cell empty"></div>
-        <div class="cal-cell empty"></div>
-        <div class="cal-cell empty"></div>
-        <div class="cal-cell empty"></div>
-        <div class="cal-cell empty"></div>
-        <div class="cal-cell">1</div>
-        <div class="cal-cell sat">2</div>
-        <!-- 第2週 -->
-        <div class="cal-cell sun">3</div>
-        <div class="cal-cell">4</div>
-        <div class="cal-cell closed">5</div>
-        <div class="cal-cell">6</div>
-        <div class="cal-cell">7</div>
-        <div class="cal-cell closed">8</div>
-        <div class="cal-cell sat">9</div>
-        <!-- 第3週 -->
-        <div class="cal-cell sun">10</div>
-        <div class="cal-cell">11</div>
-        <div class="cal-cell">12</div>
-        <div class="cal-cell">13</div>
-        <div class="cal-cell closed">14</div>
-        <div class="cal-cell">15</div>
-        <div class="cal-cell sat">16</div>
-        <!-- 第4週 -->
-        <div class="cal-cell sun">17</div>
-        <div class="cal-cell">18</div>
-        <div class="cal-cell">19</div>
-        <div class="cal-cell closed">20</div>
-        <div class="cal-cell">21</div>
-        <div class="cal-cell">22</div>
-        <div class="cal-cell sat">23</div>
-        <!-- 第5週 -->
-        <div class="cal-cell sun">24</div>
-        <div class="cal-cell">25</div>
-        <div class="cal-cell closed">26</div>
-        <div class="cal-cell">27</div>
-        <div class="cal-cell">28</div>
-        <div class="cal-cell">29</div>
-        <div class="cal-cell sat">30</div>
-        <!-- 第6週 -->
-        <div class="cal-cell sun">31</div>
-        <div class="cal-cell empty"></div>
-        <div class="cal-cell empty"></div>
-        <div class="cal-cell empty"></div>
-        <div class="cal-cell empty"></div>
-        <div class="cal-cell empty"></div>
-        <div class="cal-cell empty"></div>
-      </div>
-      <p class="cal-note">※ 定休日は変更になる場合があります。<br>最新情報は LINE 公式アカウントをご確認ください。</p>
-      <p class="cal-logo">kiranah</p>
-    </div>
-  </div>
-</section>
 
 <!-- ACCESS -->
 <section id="access">
@@ -1753,9 +1560,9 @@
       </tr>
     </table>
 
-    <!-- 4月カレンダー -->
+    <!-- 5月カレンダー -->
     <div style="margin-top:2.5rem;">
-      <p style="font-size:0.65rem;letter-spacing:0.3em;color:var(--sage-dark);margin-bottom:1rem;">APRIL 2026 — 4月の営業日</p>
+      <p style="font-size:0.65rem;letter-spacing:0.3em;color:var(--sage-dark);margin-bottom:1rem;">MAY 2026 — 5月の店休日</p>
       <div class="cal-wrap">
         <table class="cal-table">
           <thead>
@@ -1765,29 +1572,38 @@
           </thead>
           <tbody>
             <tr>
-              <td></td><td></td><td></td><td>1</td><td>2</td>
-              <td class="cal-off"><span class="cal-circle">3</span></td>
-              <td class="cal-sat">4</td>
+              <td></td><td></td><td></td><td></td><td></td>
+              <td>1</td>
+              <td class="cal-sat">2</td>
             </tr>
             <tr>
-              <td class="cal-sun">5</td><td>6</td><td>7</td><td>8</td><td>9</td>
-              <td class="cal-off"><span class="cal-circle">10</span></td>
-              <td class="cal-sat">11</td>
+              <td class="cal-sun">3</td><td>4</td>
+              <td class="cal-off"><span class="cal-circle">5</span></td>
+              <td>6</td><td>7</td>
+              <td class="cal-off"><span class="cal-circle">8</span></td>
+              <td class="cal-sat">9</td>
             </tr>
             <tr>
-              <td class="cal-sun">12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td>
-              <td class="cal-sat cal-off"><span class="cal-circle">18</span></td>
+              <td class="cal-sun">10</td><td>11</td><td>12</td><td>13</td>
+              <td class="cal-off"><span class="cal-circle">14</span></td>
+              <td>15</td>
+              <td class="cal-sat">16</td>
             </tr>
             <tr>
-              <td class="cal-sun">19</td><td>20</td><td>21</td><td>22</td><td>23</td>
-              <td class="cal-off"><span class="cal-circle">24</span></td>
-              <td class="cal-sat">25</td>
+              <td class="cal-sun">17</td><td>18</td><td>19</td>
+              <td class="cal-off"><span class="cal-circle">20</span></td>
+              <td>21</td><td>22</td>
+              <td class="cal-sat">23</td>
             </tr>
             <tr>
-              <td class="cal-sun">26</td><td>27</td><td>28</td>
-              <td class="cal-sun">29</td>
-              <td class="cal-off"><span class="cal-circle">30</span></td>
-              <td></td><td></td>
+              <td class="cal-sun">24</td><td>25</td>
+              <td class="cal-off"><span class="cal-circle">26</span></td>
+              <td>27</td><td>28</td><td>29</td>
+              <td class="cal-sat">30</td>
+            </tr>
+            <tr>
+              <td class="cal-sun">31</td>
+              <td></td><td></td><td></td><td></td><td></td><td></td>
             </tr>
           </tbody>
         </table>
